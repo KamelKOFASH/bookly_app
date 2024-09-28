@@ -6,4 +6,8 @@ abstract class Styles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
   );
+
+  static TextStyle titleSmall = TextStyle(
+    fontSize: 14.sp,
+  );
 }
