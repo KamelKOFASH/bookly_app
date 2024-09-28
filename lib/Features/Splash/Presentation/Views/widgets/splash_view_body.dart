@@ -14,6 +14,14 @@ class SplashViewBody extends StatelessWidget {
         Image.asset(
           AssetsData.logo,
         ),
+        Text(
+          'Discover the best books in the world',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
       ],
     );
   }
