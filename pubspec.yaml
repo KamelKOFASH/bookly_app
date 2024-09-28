@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  font_awesome_flutter: ^10.7.0
   get: ^4.6.6
 
 dev_dependencies:
@@ -29,7 +30,6 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
-          
   # fonts:
   #   - family: Schyler
   #     fonts:
