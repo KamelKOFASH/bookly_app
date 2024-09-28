@@ -3,6 +3,7 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -44,7 +45,9 @@ class BestSellerItem extends StatelessWidget {
       children: [
         Text(
           'Harry Potter \nand the Philosopher\'s Stone',
-          style: Styles.titleMedium,
+          style: Styles.titleMedium2.copyWith(
+            fontFamily: 'GT-Sectra-Fine',
+          ),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),

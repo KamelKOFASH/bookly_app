@@ -7,6 +7,11 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle titleMedium2 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle titleSmall = TextStyle(
     fontSize: 14.sp,
   );

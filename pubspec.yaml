@@ -31,6 +31,11 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+    - family: GT-Sectra-Fine
+      fonts:
+        - asset: assets/fonts/GTSectra/GT-Sectra-Fine-Regular.ttf
+
+    
   # fonts:
   #   - family: Schyler
   #     fonts:
