@@ -24,6 +24,12 @@ flutter:
   assets:
     - assets/images/
     - assets/animations/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          
   # fonts:
   #   - family: Schyler
   #     fonts:
