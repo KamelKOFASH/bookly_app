@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class BestSellerItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildBookImage(),
-          SizedBox(width: 26.w), // Add spacing between the image and text.
+          SizedBox(width: 26.w),
           Expanded(child: _buildBookInfo()),
         ],
       ),
@@ -45,15 +46,13 @@ class BestSellerItem extends StatelessWidget {
       children: [
         Text(
           'Harry Potter \nand the Philosopher\'s Stone',
-          style: Styles.titleMedium2.copyWith(
-            fontFamily: 'GT-Sectra-Fine',
-          ),
+          style: Styles.textStyle20,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         Text(
           'J.K. Rowling',
-          style: Styles.titleSmall.copyWith(color: Colors.grey.shade600),
+          style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
         ),
         _buildPriceAndRating(),
       ],
@@ -66,7 +65,7 @@ class BestSellerItem extends StatelessWidget {
       children: [
         Text(
           '19.99 \$',
-          style: Styles.titleMedium,
+          style: Styles.textStyle18,
         ),
         _buildRating(),
       ],
@@ -84,11 +83,11 @@ class BestSellerItem extends StatelessWidget {
         SizedBox(width: 8.w),
         Text(
           '4.9',
-          style: Styles.titleSmall.copyWith(fontWeight: FontWeight.bold),
+          style: Styles.textStyle14,
         ),
         Text(
           ' (1200)',
-          style: Styles.titleSmall.copyWith(color: Colors.grey.shade600),
+          style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
         ),
       ],
     );
