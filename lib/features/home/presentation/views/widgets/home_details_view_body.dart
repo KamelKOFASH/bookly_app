@@ -1,9 +1,9 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_button.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_details_view_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_featured_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_title.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -41,6 +41,8 @@ class HomeDetailsViewBody extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             const CustomRatingBook(),
+            SizedBox(height: 37.h),
+            const BookActions(),
           ],
         ),
       )),

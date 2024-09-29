@@ -11,13 +11,14 @@ class CustomRatingBook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
           FontAwesomeIcons.solidStar,
           size: 15.sp,
           color: Colors.yellow.shade700,
         ),
-        SizedBox(width: 6.3.w),
+        SizedBox(width: 6.5.w),
         Text(
           '4.9',
           style: Styles.textStyle16.copyWith(
