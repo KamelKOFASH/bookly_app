@@ -18,7 +18,6 @@ class BooklyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       useInheritedMediaQuery: true,
-      
       builder: (context, child) {
         return MaterialApp.router(
           routerConfig: AppRouter.router,

@@ -14,8 +14,12 @@ class CustomSearchTextField extends StatelessWidget {
           FontAwesomeIcons.magnifyingGlass,
           size: 20.sp,
         ),
-        suffixIcon: Icon(
-          FontAwesomeIcons.xmark,
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            FontAwesomeIcons.xmark,
+            size: 20.sp,
+          ),
         ),
         hintText: 'Search a book',
         border: OutlineInputBorder(
