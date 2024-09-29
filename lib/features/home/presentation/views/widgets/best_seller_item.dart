@@ -18,7 +18,7 @@ class BestSellerItem extends StatelessWidget {
         children: [
           _buildBookImage(),
           SizedBox(width: 26.w),
-          Expanded(child: _buildBookInfo()),
+          Expanded(child: _buildBookInfo(context)),
         ],
       ),
     );
@@ -39,16 +39,21 @@ class BestSellerItem extends StatelessWidget {
     );
   }
 
-  Widget _buildBookInfo() {
+  Widget _buildBookInfo(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          'Harry Potter \nand the Philosopher\'s Stone',
-          style: Styles.textStyle20,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.5,
+          child: Text(
+            'Harry Potter and the Philosopher\'s Stone',
+            style: Styles.textStyle20.copyWith(
+              fontFamily: kGTSectraFont,
+            ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+          ),
         ),
         Text(
           'J.K. Rowling',
@@ -65,7 +70,9 @@ class BestSellerItem extends StatelessWidget {
       children: [
         Text(
           '19.99 \$',
-          style: Styles.textStyle18,
+          style: Styles.textStyle20.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         _buildRating(),
       ],
@@ -80,10 +87,12 @@ class BestSellerItem extends StatelessWidget {
           size: 15.sp,
           color: Colors.yellow.shade700,
         ),
-        SizedBox(width: 8.w),
+        SizedBox(width: 6.3.w),
         Text(
           '4.9',
-          style: Styles.textStyle14,
+          style: Styles.textStyle16.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Text(
           ' (1200)',

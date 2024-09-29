@@ -21,7 +21,6 @@ abstract class Styles {
   static TextStyle textStyle20 = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.normal,
-    fontFamily: kGTSectraFont,
   );
 
   static TextStyle textStyle30 = TextStyle(
