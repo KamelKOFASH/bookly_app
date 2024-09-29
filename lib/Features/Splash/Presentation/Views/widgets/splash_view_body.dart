@@ -1,9 +1,8 @@
+import 'package:go_router/go_router.dart';
+
 import '../../../../../Core/utils/assets.dart';
-import '../../../../../constants.dart';
-import '../../../../home/presentation/views/home_view.dart';
 import 'sliding_animated_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -64,12 +63,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 4), () {
-      Get.to(
-        () => const HomeView(),
-        transition: Transition.circularReveal,
-        duration: kTranstionDuration,
-      );
-    });
+    Future.delayed(
+      const Duration(seconds: 4),
+      () {
+        GoRouter.of(context).push('/home');
+      },
+    );
   }
 }
