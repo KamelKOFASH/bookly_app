@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -80,30 +81,7 @@ class BestSellerItem extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        _buildRating(),
-      ],
-    );
-  }
-
-  Widget _buildRating() {
-    return Row(
-      children: [
-        Icon(
-          FontAwesomeIcons.solidStar,
-          size: 15.sp,
-          color: Colors.yellow.shade700,
-        ),
-        SizedBox(width: 6.3.w),
-        Text(
-          '4.9',
-          style: Styles.textStyle16.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          ' (1200)',
-          style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
-        ),
+        const CustomRatingBook(),
       ],
     );
   }
