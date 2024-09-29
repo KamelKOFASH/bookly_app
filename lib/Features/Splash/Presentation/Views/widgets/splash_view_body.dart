@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../Core/utils/assets.dart';
@@ -66,7 +67,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 4),
       () {
-        GoRouter.of(context).push('/home');
+        if (mounted) {
+          GoRouter.of(context).push(AppRouter.homeView);
+        }
       },
     );
   }
