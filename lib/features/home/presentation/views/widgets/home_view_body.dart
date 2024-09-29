@@ -5,6 +5,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_b
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_title.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -16,8 +17,7 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,9 +26,14 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.06),
                 const CustomTitle(title: 'Best Seller'),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
-                const BestSellerListView(),
               ],
             ),
+          ),
+        ),
+        SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: const BestSellerListView(),
           ),
         ),
       ],
