@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/assets.dart';
@@ -11,15 +12,20 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 130.h,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildBookImage(),
-          SizedBox(width: 26.w),
-          Expanded(child: _buildBookInfo(context)),
-        ],
+    return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push('/home_details');
+      },
+      child: SizedBox(
+        height: 130.h,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildBookImage(),
+            SizedBox(width: 26.w),
+            Expanded(child: _buildBookInfo(context)),
+          ],
+        ),
       ),
     );
   }
