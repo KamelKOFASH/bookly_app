@@ -22,13 +22,13 @@ class CustomRatingBook extends StatelessWidget {
         ),
         SizedBox(width: 6.5.w),
         Text(
-          '4.5',
+         '${ bookModel.volumeInfo?.averageRating ?? '0'}',
           style: Styles.textStyle16.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
         Text(
-          ' (1200)',
+          ' (${bookModel.volumeInfo?.ratingsCount ?? '0'})',
           style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
         ),
       ],

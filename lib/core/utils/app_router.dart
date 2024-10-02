@@ -22,7 +22,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: homeDetailsView,
-        builder: (context, state) => const HomeDetailsView(),
+        builder: (context, state) {
+          return const HomeDetailsView();
+        },
       ),
       GoRoute(
         path: searchView,
