@@ -34,7 +34,7 @@ class ApiService {
         ),
       );
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception(
           'Failed to load products: ${e.response?.statusCode}, ${e.response?.data}');
     }
@@ -55,7 +55,7 @@ class ApiService {
         ),
       );
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception('Failed to load products: ${e.response?.statusCode}');
     }
   }
@@ -65,7 +65,7 @@ class ApiService {
     try {
       final response = await _dio.delete(url);
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception('Failed to load products: ${e.response?.statusCode}');
     }
   }
@@ -76,7 +76,7 @@ class ApiService {
     try {
       final response = await _dio.patch(url, data: body);
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception('Failed to load products: ${e.response?.statusCode}');
     }
   }
@@ -86,7 +86,7 @@ class ApiService {
     try {
       final response = await _dio.head(url);
       return response.data; // Note: HEAD requests usually do not return a body
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception('Failed to load products: ${e.response?.statusCode}');
     }
   }
