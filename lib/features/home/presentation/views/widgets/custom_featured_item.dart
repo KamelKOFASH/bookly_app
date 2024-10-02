@@ -1,9 +1,9 @@
-import '../../../../../core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomFeaturedItem extends StatelessWidget {
-  const CustomFeaturedItem({super.key});
+  const CustomFeaturedItem({super.key, required this.imageUrl});
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,9 @@ class CustomFeaturedItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
-          image: const DecorationImage(
+          image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage(AssetsData.testImage),
+            image: NetworkImage(imageUrl),
           ),
         ),
       ),

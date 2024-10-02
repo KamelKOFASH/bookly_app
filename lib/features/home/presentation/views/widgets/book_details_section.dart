@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_details_view_app_bar.dart';
@@ -18,7 +19,7 @@ class BookDetailsSection extends StatelessWidget {
         const CustomDetailsViewAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.24),
-          child: const CustomFeaturedItem(),
+          child: const CustomFeaturedItem(imageUrl: AssetsData.testImage,),
         ),
         SizedBox(height: 30.h),
         Text(
