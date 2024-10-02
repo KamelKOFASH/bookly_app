@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -36,13 +37,13 @@ class BookItem extends StatelessWidget {
   Widget _buildBookImage() {
     return AspectRatio(
       aspectRatio: 2.5 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: NetworkImage(book.volumeInfo?.imageLinks!.thumbnail ?? AssetsData.testImage),
-          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16.r),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl:
+              book.volumeInfo?.imageLinks?.thumbnail ?? AssetsData.testImage,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
@@ -83,7 +84,9 @@ class BookItem extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-         CustomRatingBook(bookModel: book,),
+        CustomRatingBook(
+          bookModel: book,
+        ),
       ],
     );
   }

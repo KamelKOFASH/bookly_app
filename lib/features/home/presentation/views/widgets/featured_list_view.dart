@@ -1,7 +1,8 @@
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/widgets/custom_text_error.dart';
 import 'package:bookly_app/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:redacted/redacted.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import 'custom_featured_item.dart';
 import 'package:flutter/material.dart';
@@ -36,31 +37,30 @@ class FeaturedBooksListView extends StatelessWidget {
 
         if (state is FeaturedBooksError) {
           return CustomTextError(error: state.message);
+        } else {
+          return buildSkeletonizerLoading(context);
         }
-
-        return buildRedactedFeaturedItem(context);
       },
     );
   }
 
-  SizedBox buildRedactedFeaturedItem(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.3,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 20,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
-            child: const CustomFeaturedItem(imageUrl: '').redacted(
-              context: context,
-              redact: true,
-              configuration: RedactedConfiguration(
-                animationDuration: const Duration(milliseconds: 800), //default
+  Skeletonizer buildSkeletonizerLoading(BuildContext context) {
+    return Skeletonizer(
+      enabled: true,
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.3,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 20,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: const CustomFeaturedItem(
+                imageUrl: AssetsData.testImage,
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
