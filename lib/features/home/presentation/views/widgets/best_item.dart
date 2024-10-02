@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +10,8 @@ import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 
 class BookItem extends StatelessWidget {
-  const BookItem({super.key});
+  const BookItem({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +39,9 @@ class BookItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.r),
-          image: const DecorationImage(
+          image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage(AssetsData.testImage),
+            image: NetworkImage(book.volumeInfo?.imageLinks!.thumbnail ?? AssetsData.testImage),
           ),
         ),
       ),
@@ -54,7 +56,7 @@ class BookItem extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.5,
           child: Text(
-            'Harry Potter and the Philosopher\'s Stone',
+            book.volumeInfo?.title ?? 'No Title',
             style: Styles.textStyle20.copyWith(
               fontFamily: kGTSectraFont,
             ),
@@ -63,7 +65,7 @@ class BookItem extends StatelessWidget {
           ),
         ),
         Text(
-          'J.K. Rowling',
+          book.volumeInfo?.authors![0] ?? 'No Author',
           style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
         ),
         _buildPriceAndRating(),
@@ -76,12 +78,12 @@ class BookItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          '19.99 \$',
+          'Free',
           style: Styles.textStyle20.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
-        const CustomRatingBook(),
+         CustomRatingBook(bookModel: book,),
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_details_view_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_featured_item.dart';
@@ -36,7 +37,7 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 12.h),
-        const CustomRatingBook(),
+        const CustomRatingBook(bookModel: BookModel(),),
         SizedBox(height: 37.h),
         const BookActions(),
         SizedBox(height: 50.h),

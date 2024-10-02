@@ -1,4 +1,4 @@
-import 'best_seller_list_view.dart';
+import 'newest_books_list_view.dart';
 import 'custom_app_bar.dart';
 import 'custom_title.dart';
 import 'featured_list_view.dart';
@@ -31,7 +31,7 @@ class HomeViewBody extends StatelessWidget {
         SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: const BestSellerListView(),
+            child: const NewestBooksListView(),
           ),
         ),
       ],

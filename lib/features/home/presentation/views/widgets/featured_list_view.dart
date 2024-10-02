@@ -1,6 +1,4 @@
-import 'package:bookly_app/core/widgets/custom_circular_indicator.dart';
 import 'package:bookly_app/core/widgets/custom_text_error.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:redacted/redacted.dart';
