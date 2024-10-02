@@ -37,25 +37,29 @@ class NewestBooksListView extends StatelessWidget {
           return CustomTextError(error: state.errMessage);
         }
 
-        return Skeletonizer(
-          enabled: true,
-          child: ListView.builder(
-            itemCount: 20,
-            physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.zero,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 10.h,
-                ), // Add spacing between items(8.0),
-                child: const BookItem(
-                  book: BookModel(),
-                ),
-              );
-            },
-          ),
-        );
+        return buildSkeletonizerLoading();
       },
+    );
+  }
+
+  Skeletonizer buildSkeletonizerLoading() {
+    return Skeletonizer(
+      enabled: true,
+      child: ListView.builder(
+        itemCount: 20,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 10.h,
+            ), // Add spacing between items(8.0),
+            child: const BookItem(
+              book: BookModel(),
+            ),
+          );
+        },
+      ),
     );
   }
 }
