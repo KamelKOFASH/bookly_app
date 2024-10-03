@@ -12,10 +12,12 @@ class CustomSearchTextField extends StatelessWidget {
         filled: true,
         prefixIcon: Icon(
           FontAwesomeIcons.magnifyingGlass,
-          size: 20.sp,
+          size: 20.h,
         ),
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             FontAwesomeIcons.xmark,
             size: 20.sp,

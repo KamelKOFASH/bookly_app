@@ -9,17 +9,13 @@ class ApiService {
   //! get request
   Future<Map<String, dynamic>> get(
       {required String endPoint, String? token}) async {
-    try {
-      final response = await _dio.get(
-        "$_baseUrl$endPoint",
-        options: Options(
-          headers: token != null ? {"Authorization": "Bearer $token"} : {},
-        ),
-      );
-      return response.data;
-    } on DioException catch (e) {
-      throw Exception('Failed to load products: ${e.response?.statusCode}');
-    }
+    final response = await _dio.get(
+      "$_baseUrl$endPoint",
+      options: Options(
+        headers: token != null ? {"Authorization": "Bearer $token"} : {},
+      ),
+    );
+    return response.data;
   }
 
   //! post request

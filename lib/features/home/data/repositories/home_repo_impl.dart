@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              "volumes?Sorting=newest&Filtering=free-ebooks&q=subject:programming");
+              "volumes?Sorting=newest&Filtering=free-ebooks&q=subject:computer-science");
 
       List<BookModel> books = [];
 
@@ -33,7 +33,9 @@ class HomeRepoImpl implements HomeRepo {
       }
 
       return left(
-        ServerFailure(e.toString()),
+        ServerFailure(
+          e.toString(),
+        ),
       );
     }
   }
