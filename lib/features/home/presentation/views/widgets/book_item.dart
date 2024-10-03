@@ -1,13 +1,12 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_image_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
-import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 
 class BookItem extends StatelessWidget {
@@ -25,25 +24,12 @@ class BookItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildBookImage(),
+            CustomImageItem(
+              imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+            ),
             SizedBox(width: 26.w),
             Expanded(child: _buildBookInfo(context)),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildBookImage() {
-    return AspectRatio(
-      aspectRatio: 2.5 / 4,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16.r),
-        child: CachedNetworkImage(
-          fit: BoxFit.fill,
-          imageUrl:
-              book.volumeInfo?.imageLinks?.thumbnail ?? AssetsData.testImage,
-          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );

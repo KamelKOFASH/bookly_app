@@ -3,7 +3,7 @@ import 'package:bookly_app/core/widgets/custom_text_error.dart';
 import 'package:bookly_app/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'custom_featured_item.dart';
+import 'custom_image_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +23,7 @@ class FeaturedBooksListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  child: CustomFeaturedItem(
+                  child: CustomImageItem(
                     imageUrl:
                         state.books[index].volumeInfo?.imageLinks?.thumbnail ??
                             '',
@@ -54,7 +54,7 @@ class FeaturedBooksListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w),
-              child: const CustomFeaturedItem(
+              child: const CustomImageItem(
                 imageUrl: AssetsData.testImage,
               ),
             );

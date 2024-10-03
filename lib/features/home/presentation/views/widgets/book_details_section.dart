@@ -3,7 +3,7 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_actions.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_details_view_app_bar.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_featured_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_image_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +20,9 @@ class BookDetailsSection extends StatelessWidget {
         const CustomDetailsViewAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.24),
-          child: const CustomFeaturedItem(imageUrl: AssetsData.testImage,),
+          child: const CustomImageItem(
+            imageUrl: AssetsData.testImage,
+          ),
         ),
         SizedBox(height: 30.h),
         Text(
@@ -37,7 +39,9 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 12.h),
-        const CustomRatingBook(bookModel: BookModel(),),
+        const CustomRatingBook(
+          bookModel: BookModel(),
+        ),
         SizedBox(height: 37.h),
         const BookActions(),
         SizedBox(height: 50.h),

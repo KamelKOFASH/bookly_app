@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomFeaturedItem extends StatelessWidget {
-  const CustomFeaturedItem({super.key, required this.imageUrl});
+class CustomImageItem extends StatelessWidget {
+  const CustomImageItem({super.key, required this.imageUrl});
   final String imageUrl;
 
   @override
@@ -15,7 +15,7 @@ class CustomFeaturedItem extends StatelessWidget {
         child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: imageUrl,
-          errorWidget: (context, url, error) => const Icon(Icons.error), 
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
