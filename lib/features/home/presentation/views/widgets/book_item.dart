@@ -57,6 +57,8 @@ class BookItem extends StatelessWidget {
         Text(
           book.volumeInfo?.authors![0] ?? 'No Author',
           style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
         ),
         _buildPriceAndRating(),
       ],

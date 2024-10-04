@@ -47,7 +47,6 @@ class VolumeInfo extends Equatable {
     this.infoLink,
     this.canonicalVolumeLink,
     this.averageRating,
-
     this.ratingsCount,
   });
 
@@ -80,7 +79,9 @@ class VolumeInfo extends Equatable {
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
         canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
-        averageRating: json['averageRating'] as dynamic,
+        averageRating: json['averageRating'] == null
+            ? null
+            : json['averageRating'] as dynamic,
         ratingsCount: json['ratingsCount'] as int?,
       );
 

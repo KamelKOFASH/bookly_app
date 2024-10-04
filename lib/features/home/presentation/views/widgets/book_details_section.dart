@@ -1,4 +1,3 @@
-import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../data/models/book_model/book_model.dart';
 import 'book_actions.dart';
@@ -27,21 +26,19 @@ class BookDetailsSection extends StatelessWidget {
         ),
         SizedBox(height: 30.h),
         Text(
-          bookModel.volumeInfo?.title ?? 'No Title',
+          bookModel.volumeInfo?.title ?? '',
           style: Styles.textStyle30,
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 6.h),
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-            bookModel.volumeInfo?.authors![0] ?? 'No Author',
-            style: Styles.textStyle18.copyWith(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
-            ),
+        Text(
+          bookModel.volumeInfo?.authors?[0] ?? '',
+          style: Styles.textStyle18.copyWith(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w500,
+            color: Colors.grey,
           ),
+          textAlign: TextAlign.center,
         ),
         SizedBox(height: 12.h),
         CustomRatingBook(

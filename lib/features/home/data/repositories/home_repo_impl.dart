@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              "volumes?Sorting=newest&Filtering=free-ebooks&q=subject:computer-science");
+              "volumes?q=computer&filter=free-ebooks&orderBy=newest");
 
       List<BookModel> books = [];
 
@@ -66,13 +66,14 @@ class HomeRepoImpl implements HomeRepo {
       );
     }
   }
-  
+
   @override
-  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(String category) async{
-   try {
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      String category) async {
+    try {
       var data = await apiService.get(
           endPoint:
-              "volumes?Sorting=relevance&Filtering=free-ebooks&q=programming&Category=$category");
+              "volumes?q=programming+subject:$category&filter=free-ebooks&orderBy=relevance");
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(

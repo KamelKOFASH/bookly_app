@@ -6,7 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomRatingBook extends StatelessWidget {
   const CustomRatingBook({
-    super.key, required this.bookModel,
+    super.key,
+    required this.bookModel,
   });
   final BookModel bookModel;
 
@@ -22,16 +23,20 @@ class CustomRatingBook extends StatelessWidget {
         ),
         SizedBox(width: 6.5.w),
         Text(
-         '${ bookModel.volumeInfo?.averageRating ?? '0'}',
+          bookModel.volumeInfo?.averageRating?.toStringAsFixed(1) ?? '0.0',
           style: Styles.textStyle16.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
         Text(
-          ' (${bookModel.volumeInfo?.ratingsCount ?? '0'})',
+          '(${bookModel.volumeInfo?.ratingsCount ?? 0})',
           style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
         ),
       ],
     );
   }
+}
+
+extension on Enum? {
+  toStringAsFixed(int i) {}
 }
