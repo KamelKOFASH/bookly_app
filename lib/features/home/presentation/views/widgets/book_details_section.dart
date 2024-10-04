@@ -1,15 +1,16 @@
-import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_actions.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_details_view_app_bar.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_image_item.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_model/book_model.dart';
+import 'book_actions.dart';
+import 'custom_details_view_app_bar.dart';
+import 'custom_image_item.dart';
+import 'custom_rating_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,27 +21,31 @@ class BookDetailsSection extends StatelessWidget {
         const CustomDetailsViewAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.24),
-          child: const CustomImageItem(
-            imageUrl: AssetsData.testImage,
+          child: CustomImageItem(
+            book: bookModel,
           ),
         ),
         SizedBox(height: 30.h),
         Text(
-          "The Jungle Book",
+          bookModel.volumeInfo?.title ?? 'No Title',
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         SizedBox(height: 6.h),
-        Text(
-          "Rudyard Kipling",
-          style: Styles.textStyle18.copyWith(
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey,
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            bookModel.volumeInfo?.authors![0] ?? 'No Author',
+            style: Styles.textStyle18.copyWith(
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
           ),
         ),
         SizedBox(height: 12.h),
-        const CustomRatingBook(
-          bookModel: BookModel(),
+        CustomRatingBook(
+          bookModel: bookModel,
         ),
         SizedBox(height: 37.h),
         const BookActions(),

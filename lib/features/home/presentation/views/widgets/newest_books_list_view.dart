@@ -1,6 +1,6 @@
-import 'package:bookly_app/core/widgets/custom_text_error.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
+import '../../../../../core/widgets/custom_text_error.dart';
+import '../../../data/models/book_model/book_model.dart';
+import '../../view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

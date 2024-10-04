@@ -1,7 +1,7 @@
-import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_image_item.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating_book.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../data/models/book_model/book_model.dart';
+import 'custom_image_item.dart';
+import 'custom_rating_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +17,10 @@ class BookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.homeDetailsView);
+        GoRouter.of(context).push(
+          AppRouter.bookDetailsView,
+          extra: book,
+        );
       },
       child: SizedBox(
         height: 130.h,
@@ -25,7 +28,7 @@ class BookItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomImageItem(
-              imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+              book: book,
             ),
             SizedBox(width: 26.w),
             Expanded(child: _buildBookInfo(context)),

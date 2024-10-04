@@ -1,10 +1,12 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/book_details_section.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_section.dart';
+import '../../../data/models/book_model/book_model.dart';
+import 'book_details_section.dart';
+import 'similar_books_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeDetailsViewBody extends StatelessWidget {
-  const HomeDetailsViewBody({super.key});
+class BookDetailsViewBody extends StatelessWidget {
+  const BookDetailsViewBody({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +17,11 @@ class HomeDetailsViewBody extends StatelessWidget {
           child: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: const Column(
+              child:  Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  BookDetailsSection(),
-                  SimilarBooksSection(),
+                  BookDetailsSection(bookModel: book,),
+                  const SimilarBooksSection(),
                 ],
               ),
             ),

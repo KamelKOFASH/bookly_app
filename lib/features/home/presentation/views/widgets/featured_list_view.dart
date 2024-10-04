@@ -1,6 +1,6 @@
-import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/core/widgets/custom_text_error.dart';
-import 'package:bookly_app/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
+import '../../../../../core/widgets/custom_text_error.dart';
+import '../../../data/models/book_model/book_model.dart';
+import '../../view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'custom_image_item.dart';
@@ -24,9 +24,8 @@ class FeaturedBooksListView extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: CustomImageItem(
-                    imageUrl:
-                        state.books[index].volumeInfo?.imageLinks?.thumbnail ??
-                            '',
+                    book:
+                        state.books[index],
                   ),
                 );
               },
@@ -54,8 +53,8 @@ class FeaturedBooksListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w),
-              child: const CustomImageItem(
-                imageUrl: AssetsData.testImage,
+              child:  const CustomImageItem(
+                book: BookModel(),
               ),
             );
           },
