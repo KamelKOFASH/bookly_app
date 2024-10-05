@@ -29,14 +29,10 @@ class CustomRatingBook extends StatelessWidget {
           ),
         ),
         Text(
-          '(${bookModel.volumeInfo?.ratingsCount ?? 0})',
+          ' (${bookModel.volumeInfo?.ratingsCount ?? 0})',
           style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
         ),
       ],
     );
   }
-}
-
-extension on Enum? {
-  toStringAsFixed(int i) {}
 }

@@ -9,17 +9,19 @@ class CustomButton extends StatelessWidget {
     required this.bgColor,
     required this.textColor,
     this.radius,
+    this.onPressed,
   });
   final Color bgColor;
   final Color textColor;
   final String text;
   final BorderRadius? radius;
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           foregroundColor: textColor,
           backgroundColor: bgColor,
@@ -31,6 +33,7 @@ class CustomButton extends StatelessWidget {
           text,
           style: Styles.textStyle18.copyWith(
             fontWeight: FontWeight.w900,
+            color: textColor,
           ),
         ),
       ),
