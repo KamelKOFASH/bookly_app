@@ -44,6 +44,7 @@ class BookActions extends StatelessWidget {
     );
   }
 
+
   String getText(BookModel book) {
     if (book.volumeInfo?.previewLink == null) {
       return 'Not Available';
