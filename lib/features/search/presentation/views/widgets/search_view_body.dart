@@ -1,3 +1,4 @@
+import '../../../../../core/utils/styles.dart';
 import 'custom_search_text_field.dart';
 import 'search_result_list_view.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +13,11 @@ class SearchViewBody extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomSearchTextField(),
+            SizedBox(height: 20.h),
+            Text('Search Results:', style: Styles.textStyle16),
             SizedBox(height: 20.h),
             const Expanded(child: SearchResultListView()),
           ],

@@ -16,20 +16,23 @@ class NewestBooksListView extends StatelessWidget {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
-          return ListView.builder(
-            itemCount: state.books.length,
-            physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.zero,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 10.h,
-                ), // Add spacing between items(8.0),
-                child: BookItem(
-                  book: state.books[index],
-                ),
-              );
-            },
+          return Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: state.books.length,
+              physics: const NeverScrollableScrollPhysics(), // Disable scrolling since the parent scrolls
+              padding: EdgeInsets.zero,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10.h,
+                  ),
+                  child: BookItem(
+                    book: state.books[index],
+                  ),
+                );
+              },
+            ),
           );
         }
 
@@ -45,20 +48,23 @@ class NewestBooksListView extends StatelessWidget {
   Skeletonizer buildSkeletonizerLoading() {
     return Skeletonizer(
       enabled: true,
-      child: ListView.builder(
-        itemCount: 20,
-        physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 10.h,
-            ), // Add spacing between items(8.0),
-            child: const BookItem(
-              book: BookModel(),
-            ),
-          );
-        },
+      child: SizedBox(
+        height: 400.h, // Ensure height is constrained during loading
+        child: ListView.builder(
+          itemCount: 20,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 10.h,
+              ),
+              child: const BookItem(
+                book: BookModel(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

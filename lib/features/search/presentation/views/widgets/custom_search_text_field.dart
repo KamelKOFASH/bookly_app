@@ -1,3 +1,4 @@
+import '../../view_models/search_cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,7 +8,19 @@ class CustomSearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController controller = TextEditingController();
     return TextField(
+      onSubmitted: (value) {
+        if(value.isNotEmpty) {
+          SearchCubit.get(context).searchBooks(query: value);
+        }
+      },
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          SearchCubit.get(context).searchBooks(query: value);
+        }
+      },
+      controller: controller,
       decoration: InputDecoration(
         filled: true,
         prefixIcon: Icon(

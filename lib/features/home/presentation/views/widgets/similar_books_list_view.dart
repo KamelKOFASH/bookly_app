@@ -32,7 +32,7 @@ class SimilarBooksListView extends StatelessWidget {
         }
 
         if (state is SimilarBooksFailure) {
-          return CustomTextError(error: state.errMessage);
+          return const CustomTextError(error: 'No books found');
         }
         return Skeletonizer(
           child: SizedBox(
@@ -43,7 +43,7 @@ class SimilarBooksListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5.w),
-                    child:  const CustomImageItem(
+                    child: const CustomImageItem(
                       book: BookModel(),
                     ),
                   );

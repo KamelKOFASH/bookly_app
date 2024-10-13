@@ -1,3 +1,6 @@
+import 'features/search/data/repositories/search_repo_impl.dart';
+import 'features/search/presentation/view_models/search_cubit/search_cubit.dart';
+
 import 'core/utils/app_router.dart';
 import 'core/utils/service_locator.dart';
 import 'features/home/data/repositories/home_repo_impl.dart';
@@ -36,6 +39,11 @@ class BooklyApp extends StatelessWidget {
               create: (context) => NewestBooksCubit(
                 getIt.get<HomeRepoImpl>(),
               )..fetchNewestBooks(),
+            ),
+            BlocProvider(
+              create: (context) => SearchCubit(
+                getIt.get<SearchRepoImpl>(),
+              ),
             ),
           ],
           child: MaterialApp.router(

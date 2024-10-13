@@ -31,7 +31,7 @@ class BookItem extends StatelessWidget {
               book: book,
             ),
             SizedBox(width: 26.w),
-            Expanded(child: _buildBookInfo(context)),
+            _buildBookInfo(context),
           ],
         ),
       ),
@@ -39,29 +39,31 @@ class BookItem extends StatelessWidget {
   }
 
   Widget _buildBookInfo(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.5,
-          child: Text(
-            book.volumeInfo?.title ?? 'No Title',
-            style: Styles.textStyle20.copyWith(
-              fontFamily: kGTSectraFont,
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.5,
+            child: Text(
+              book.volumeInfo?.title ?? 'No Title',
+              style: Styles.textStyle20.copyWith(
+                fontFamily: kGTSectraFont,
+              ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
             ),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 2,
           ),
-        ),
-        Text(
-          book.volumeInfo?.authors![0] ?? 'No Author',
-          style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-        ),
-        _buildPriceAndRating(),
-      ],
+          Text(
+            book.volumeInfo?.authors?[0] ?? 'No Author',
+            style: Styles.textStyle14.copyWith(color: Colors.grey.shade600),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+          _buildPriceAndRating(),
+        ],
+      ),
     );
   }
 
