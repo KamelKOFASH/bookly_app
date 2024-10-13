@@ -18,7 +18,7 @@ Follow the instructions below to get a copy of **Bookly App** up and running on 
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/bookly_app.git
+    git clone https://github.com/KamelKOFASH/bookly_app.git
     cd bookly_app
     ```
 
