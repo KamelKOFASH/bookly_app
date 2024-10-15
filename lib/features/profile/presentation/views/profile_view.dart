@@ -5,15 +5,13 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile Screen'),
-        backgroundColor: Colors.blueAccent,
-      ),
-      body: const Center(
+    return const Scaffold(
+      body: Center(
         child: Text(
           'Your Profile',
-          style: TextStyle(fontSize: 24, color: Colors.black),
+          style: TextStyle(
+            fontSize: 24,
+          ),
         ),
       ),
     );

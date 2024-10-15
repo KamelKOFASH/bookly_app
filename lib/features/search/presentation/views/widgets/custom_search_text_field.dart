@@ -1,3 +1,5 @@
+import 'package:go_router/go_router.dart';
+
 import '../../view_models/search_cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +13,7 @@ class CustomSearchTextField extends StatelessWidget {
     TextEditingController controller = TextEditingController();
     return TextField(
       onSubmitted: (value) {
-        if(value.isNotEmpty) {
+        if (value.isNotEmpty) {
           SearchCubit.get(context).searchBooks(query: value);
         }
       },
@@ -29,7 +31,7 @@ class CustomSearchTextField extends StatelessWidget {
         ),
         suffixIcon: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            GoRouter.of(context).pop();
           },
           icon: Icon(
             FontAwesomeIcons.xmark,

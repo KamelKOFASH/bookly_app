@@ -1,5 +1,5 @@
-import '../../../../../core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomDetailsViewAppBar extends StatelessWidget {
@@ -11,14 +11,14 @@ class CustomDetailsViewAppBar extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            GoRouter.of(context).push(AppRouter.homeView);
+            GoRouter.of(context).pop();
           },
           icon: const Icon(Icons.close),
         ),
         const Spacer(),
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.shopping_cart_outlined),
+          icon: const Icon(FontAwesomeIcons.bookmark),
         ),
       ],
     );

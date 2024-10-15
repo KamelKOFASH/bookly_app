@@ -9,7 +9,9 @@ class SettingsView extends StatelessWidget {
       body: Center(
         child: Text(
           'Settings Screen',
-          style: TextStyle(fontSize: 24, color: Colors.black),
+          style: TextStyle(
+            fontSize: 24,
+          ),
         ),
       ),
     );

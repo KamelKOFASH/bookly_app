@@ -1,5 +1,5 @@
 import '../../../../core/errors/failure.dart';
-import '../../../home/data/models/book_model/book_model.dart';
+import '../../../../core/models/book_model/book_model.dart';
 import 'search_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';

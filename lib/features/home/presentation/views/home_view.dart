@@ -18,7 +18,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   //? This will hold the index of the currently selected tab
   int _selectedIndex = 0;
-
+  final ValueNotifier<bool> isDarkModeNotifier = ValueNotifier(true);
   //? List of screens to display for each tab
   final List<Widget> _screens = [
     const HomeViewBody(),
@@ -46,28 +46,24 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: const Fab(),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerDocked, // Centering FAB
-
+      //* To Centering FAB
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       //* Display the current screen based on the selected tab
       body: _screens[_selectedIndex],
-
       //* Bottom Navigation Bar
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: _icons,
-
         activeIndex: _selectedIndex,
-        iconSize: 24,
-        gapLocation: GapLocation.center, // Centering the FAB
+        iconSize: 18,
+        gapLocation: GapLocation.center, //? Centering the FAB
         notchSmoothness:
-            NotchSmoothness.verySmoothEdge, // Smooth edge around FAB
+            NotchSmoothness.verySmoothEdge, //? Smooth edge around FAB
         onTap: _onItemTapped,
         splashColor: Colors.grey,
         notchMargin: 8.0,
-
-        backgroundColor: Colors.black, // Navigation bar background color
-        activeColor: Colors.white, // Active icon color
-        inactiveColor: Colors.grey, // Inactive icon color
+        backgroundColor: Colors.black, //? Navigation bar background color
+        activeColor: Colors.white, //? Active icon color
+        inactiveColor: Colors.grey, //? Inactive icon color
       ),
     );
   }

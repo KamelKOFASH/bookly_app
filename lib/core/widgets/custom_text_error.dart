@@ -10,7 +10,7 @@ class CustomTextError extends StatelessWidget {
     return Center(
       child: Text(
         error,
-        style: Styles.textStyle18,
+        style: Styles.textStyle16.copyWith(fontStyle: FontStyle.italic),
       ),
     );
   }

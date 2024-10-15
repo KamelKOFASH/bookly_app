@@ -1,5 +1,5 @@
 import '../../../../../core/utils/app_router.dart';
-import '../../../data/models/book_model/book_model.dart';
+import '../../../../../core/models/book_model/book_model.dart';
 import 'custom_image_item.dart';
 import 'custom_rating_book.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
 import '../../../../../core/utils/styles.dart';
-import '../../../data/models/book_model/book_model.dart';
+import '../../../../../core/models/book_model/book_model.dart';
 import 'book_actions.dart';
 import 'custom_details_view_app_bar.dart';
 import 'custom_image_item.dart';
