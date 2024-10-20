@@ -1,5 +1,5 @@
-import 'package:bookly_app/features/settings/presentation/views/widgets/settings_app_bar.dart';
-import 'package:bookly_app/features/settings/presentation/views/widgets/settings_view_body.dart';
+import 'widgets/settings_app_bar.dart';
+import 'widgets/settings_view_body.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';

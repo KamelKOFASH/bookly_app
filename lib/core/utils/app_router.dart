@@ -1,5 +1,5 @@
-import 'package:bookly_app/features/profile/presentation/views/profile_view.dart';
-import 'package:bookly_app/features/settings/presentation/views/languages_view.dart';
+import '../../features/profile/presentation/views/profile_view.dart';
+import '../../features/settings/presentation/views/languages_view.dart';
 
 import '../../features/settings/presentation/views/settings_view.dart';
 import 'service_locator.dart';

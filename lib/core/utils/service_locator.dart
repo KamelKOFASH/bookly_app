@@ -1,9 +1,9 @@
-import '../../features/search/data/repositories/search_repo_impl.dart';
-
-import 'api_service.dart';
-import '../../features/home/data/repositories/home_repo_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+
+import '../../features/home/data/repositories/home_repo_impl.dart';
+import '../../features/search/data/repositories/search_repo_impl.dart';
+import 'api_service.dart';
 
 final getIt = GetIt.instance;
 

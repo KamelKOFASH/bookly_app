@@ -1,14 +1,15 @@
-import 'package:bookly_app/features/settings/presentation/view_models/cubit/locale_language_cubit.dart';
+import '../view_models/cubit/locale_language_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/settings/presentation/views/widgets/settings_app_bar.dart';
+import '../../../../core/utils/styles.dart';
+import 'widgets/settings_app_bar.dart';
 import '../../../../generated/l10n.dart';
 
 class LanguagesView extends StatefulWidget {
   const LanguagesView({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LanguagesViewState createState() => _LanguagesViewState();
 }
 

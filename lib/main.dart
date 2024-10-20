@@ -1,6 +1,7 @@
-import 'package:bookly_app/features/settings/presentation/view_models/cubit/locale_language_cubit.dart';
-import 'package:bookly_app/generated/l10n.dart';
 import 'package:intl/intl.dart';
+
+import 'features/settings/presentation/view_models/cubit/locale_language_cubit.dart';
+import 'generated/l10n.dart';
 import 'features/search/data/repositories/search_repo_impl.dart';
 import 'features/search/presentation/view_models/search_cubit/search_cubit.dart';
 import 'core/utils/app_router.dart';
@@ -54,9 +55,7 @@ class BooklyApp extends StatelessWidget {
           ],
           child: BlocBuilder<LocaleLanguageCubit, Locale>(
             builder: (context, state) {
-              // Check if the current locale is Arabic
               bool isArabic = state.languageCode == 'ar';
-
               return MaterialApp.router(
                 locale: state,
                 localizationsDelegates: const [
@@ -72,10 +71,9 @@ class BooklyApp extends StatelessWidget {
                   scaffoldBackgroundColor: kPrimaryColor,
                   // Change the font based on the locale
                   textTheme: GoogleFonts.getTextTheme(
-                    isArabic ? 'Cairo' : 'Montserrat',
+                    isArabic == true ? 'Cairo' : 'Montserrat',
                     ThemeData.dark().textTheme,
                   ),
-                  
                 ),
               );
             },
@@ -85,3 +83,7 @@ class BooklyApp extends StatelessWidget {
     );
   }
 }
+
+// bool isArabic() {
+//   return Intl.getCurrentLocale() == 'ar';
+// }

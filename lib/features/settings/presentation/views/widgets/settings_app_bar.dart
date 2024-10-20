@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/styles.dart';
-import '../../../../../generated/l10n.dart';
 
 class SettingsAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {

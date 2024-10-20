@@ -1,6 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/fab.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/home_view_body.dart';
+import 'widgets/fab.dart';
+import 'widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

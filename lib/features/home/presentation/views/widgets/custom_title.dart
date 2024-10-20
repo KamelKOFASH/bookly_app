@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/styles.dart';
 
 class CustomTitle extends StatelessWidget {

@@ -1,10 +1,10 @@
-import '../../../../../core/functions/launch_url.dart';
-import '../../../../../core/models/book_model/book_model.dart';
-
-import '../../../../../core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+
+import '../../../../../core/functions/launch_url.dart';
+import '../../../../../core/models/book_model/book_model.dart';
+import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../generated/l10n.dart';
 
 class BookActions extends StatelessWidget {
