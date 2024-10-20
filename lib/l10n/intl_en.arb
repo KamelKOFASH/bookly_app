@@ -1,0 +1,24 @@
+{
+    "newest_books": "Newest Books",
+    "similar_books": "Similar Books",
+    "search": "Search a book",
+    "no_books_found": "No books found",
+    "search_result": "Search Result",
+    "free": "Free",
+    "preview": "Preview",
+    "notAvailable": "Not Available",
+    "language": "Language",
+    "dark_mode": "Dark Mode",
+    "general": "General",
+    "settings": "Settings",
+    "account": "Account",
+    "log_out": "Log Out",
+    "profile": "Profile",
+    "splash_text": "Discover the best books in the world",
+    "English": "English",
+    "Arabic": "Arabic",
+    "select_language": "Select Language",
+    "choose_language": "Choose your Language",
+    "select_a_language": "Select a language"
+
+}

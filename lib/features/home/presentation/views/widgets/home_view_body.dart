@@ -1,3 +1,4 @@
+import '../../../../../generated/l10n.dart';
 import 'newest_books_list_view.dart';
 import 'custom_app_bar.dart';
 import 'custom_title.dart';
@@ -23,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const FeaturedBooksListView(),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-                const CustomTitle(title: 'Newest Books'),
+                CustomTitle(title: S.of(context).newest_books),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
               ],
             ),

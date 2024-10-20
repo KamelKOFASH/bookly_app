@@ -1,3 +1,7 @@
+import 'package:bookly_app/features/profile/presentation/views/profile_view.dart';
+import 'package:bookly_app/features/settings/presentation/views/languages_view.dart';
+
+import '../../features/settings/presentation/views/settings_view.dart';
 import 'service_locator.dart';
 import '../models/book_model/book_model.dart';
 import '../../features/home/data/repositories/home_repo_impl.dart';
@@ -14,6 +18,9 @@ abstract class AppRouter {
   static const String homeView = '/home';
   static const String bookDetailsView = '/home_details';
   static const String searchView = '/search';
+  static const String languageView = '/language';
+  static const String settingsView = '/settings';
+  static const String profileView = '/profile';
 
   static final router = GoRouter(
     routes: [
@@ -32,7 +39,7 @@ abstract class AppRouter {
             create: (context) => SimilarBooksCubit(
               getIt.get<HomeRepoImpl>(),
             ),
-            child:  BookDetailsView(
+            child: BookDetailsView(
               book: state.extra as BookModel,
             ),
           );
@@ -41,6 +48,18 @@ abstract class AppRouter {
       GoRoute(
         path: searchView,
         builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: languageView,
+        builder: (context, state) => const LanguagesView(),
+      ),
+      GoRoute(
+        path: profileView,
+        builder: (context, state) => const ProfileView(),
+      ),
+      GoRoute(
+        path: settingsView,
+        builder: (context, state) => const SettingsView(),
       ),
     ],
   );

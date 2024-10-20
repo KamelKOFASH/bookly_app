@@ -1,4 +1,5 @@
 import '../../../../../core/utils/styles.dart';
+import '../../../../../generated/l10n.dart';
 import 'custom_search_text_field.dart';
 import 'search_result_list_view.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class SearchViewBody extends StatelessWidget {
           children: [
             const CustomSearchTextField(),
             SizedBox(height: 20.h),
-            Text('Search Results:', style: Styles.textStyle16),
+            Text(S.of(context).search_result, style: Styles.textStyle16),
             SizedBox(height: 20.h),
             const Expanded(child: SearchResultListView()),
           ],

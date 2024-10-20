@@ -1,0 +1,24 @@
+{
+    "newest_books": "أحدث الكتب",
+    "similar_books": "كتب مشابهة",
+    "search": "ابحث عن كتاب",
+    "no_books_found": "لا توجد كتب متاحة",
+    "search_result": "نتيجة البحث",
+    "free": "مجاني",
+    "preview": "عرض",
+    "notAvailable": "غير متوفر",
+    "language": "اللغة",
+    "dark_mode": "الوضع المظلم",
+    "general": "عام",
+    "settings": "الاعدادات",
+    "account": "الحساب",
+    "log_out": "تسجيل الخروج",
+    "profile": "الملف الشخصي",
+    "splash_text": "تصفح جميع الكتب في العالم",
+    "English": "الانجليزية",
+    "Arabic": "العربية",
+    "select_language": "اختر اللغة",
+    "choose_language": "اختر لغتك",
+    "select_a_language": "اختر لغة"
+
+}

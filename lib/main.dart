@@ -1,6 +1,8 @@
+import 'package:bookly_app/features/settings/presentation/view_models/cubit/locale_language_cubit.dart';
+import 'package:bookly_app/generated/l10n.dart';
+import 'package:intl/intl.dart';
 import 'features/search/data/repositories/search_repo_impl.dart';
 import 'features/search/presentation/view_models/search_cubit/search_cubit.dart';
-
 import 'core/utils/app_router.dart';
 import 'core/utils/service_locator.dart';
 import 'features/home/data/repositories/home_repo_impl.dart';
@@ -11,6 +13,7 @@ import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   setupServiceLocator();
@@ -45,16 +48,37 @@ class BooklyApp extends StatelessWidget {
                 getIt.get<SearchRepoImpl>(),
               ),
             ),
-          ],
-          child: MaterialApp.router(
-            routerConfig: AppRouter.router,
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData.dark().copyWith(
-              scaffoldBackgroundColor: kPrimaryColor,
-              textTheme: GoogleFonts.montserratTextTheme(
-                ThemeData.dark().textTheme,
-              ),
+            BlocProvider(
+              create: (context) => LocaleLanguageCubit(), // Provide LocaleCubit
             ),
+          ],
+          child: BlocBuilder<LocaleLanguageCubit, Locale>(
+            builder: (context, state) {
+              // Check if the current locale is Arabic
+              bool isArabic = state.languageCode == 'ar';
+
+              return MaterialApp.router(
+                locale: state,
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: S.delegate.supportedLocales,
+                routerConfig: AppRouter.router,
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData.dark().copyWith(
+                  scaffoldBackgroundColor: kPrimaryColor,
+                  // Change the font based on the locale
+                  textTheme: GoogleFonts.getTextTheme(
+                    isArabic ? 'Cairo' : 'Montserrat',
+                    ThemeData.dark().textTheme,
+                  ),
+                  
+                ),
+              );
+            },
           ),
         );
       },

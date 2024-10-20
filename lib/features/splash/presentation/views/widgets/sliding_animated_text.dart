@@ -1,5 +1,8 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../generated/l10n.dart';
 
 class SlidingTextWidget extends StatelessWidget {
   const SlidingTextWidget({
@@ -21,13 +24,9 @@ class SlidingTextWidget extends StatelessWidget {
           return SlideTransition(
             position: _animation,
             child: Text(
-              'Discover the best books in the world',
+              S.of(context).splash_text,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Poppins',
-              ),
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
             ),
           );
         });

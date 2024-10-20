@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../view_models/search_cubit/search_cubit.dart';
@@ -38,7 +40,8 @@ class CustomSearchTextField extends StatelessWidget {
             size: 20.sp,
           ),
         ),
-        hintText: 'Search a book',
+        hintText: S.of(context).search,
+        hintStyle: Styles.textStyle16.copyWith(color: Colors.grey.shade600),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.r),
           borderSide: BorderSide.none,

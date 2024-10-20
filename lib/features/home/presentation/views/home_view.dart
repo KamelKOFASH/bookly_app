@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   //? List of screens to display for each tab
   final List<Widget> _screens = [
     const HomeViewBody(),
-    const FavoriteView(),
+     FavoriteView(),
     const ProfileView(),
     const SettingsView(),
   ];
