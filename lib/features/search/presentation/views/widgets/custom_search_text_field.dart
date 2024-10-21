@@ -1,5 +1,6 @@
+import 'package:bookly_app/generated/l10n.dart';
+
 import '../../../../../core/utils/styles.dart';
-import '../../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../view_models/search_cubit/search_cubit.dart';

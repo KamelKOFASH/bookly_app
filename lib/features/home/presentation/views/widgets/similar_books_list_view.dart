@@ -1,6 +1,7 @@
+import 'package:bookly_app/generated/l10n.dart';
+
 import '../../../../../core/widgets/custom_text_error.dart';
 import '../../../../../core/models/book_model/book_model.dart';
-import '../../../../../generated/l10n.dart';
 import '../../view_models/similar_books_cubit/similar_books_cubit.dart';
 import 'custom_image_item.dart';
 import 'package:flutter/material.dart';

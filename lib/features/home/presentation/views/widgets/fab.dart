@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_router.dart';
@@ -9,17 +9,17 @@ class Fab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return FloatingActionButton(
-      backgroundColor: Colors.black,
+      backgroundColor: !isDarkMode ? Colors.white : Colors.black,
       elevation: 10,
       shape: const StadiumBorder(),
       onPressed: () {
         GoRouter.of(context).push(AppRouter.searchView);
       },
-      child: const Icon(
-        FontAwesomeIcons.magnifyingGlass,
-        color: Colors.white,
-        size: 18,
+      child: SpinKitCubeGrid(
+        color: isDarkMode ? Colors.white : Colors.black,
+        size: 20.0,
       ),
     );
   }

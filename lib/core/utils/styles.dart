@@ -29,6 +29,3 @@ abstract class Styles {
   );
 }
 
-// bool isArabic() {
-//   return Intl.getCurrentLocale() == 'ar';
-// }

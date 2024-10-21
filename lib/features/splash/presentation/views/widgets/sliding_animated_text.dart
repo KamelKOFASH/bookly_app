@@ -1,7 +1,8 @@
+import 'package:bookly_app/generated/l10n.dart';
+import 'package:intl/intl.dart';
+
 import '../../../../../core/utils/styles.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../generated/l10n.dart';
 
 class SlidingTextWidget extends StatelessWidget {
   const SlidingTextWidget({
@@ -25,9 +26,17 @@ class SlidingTextWidget extends StatelessWidget {
             child: Text(
               S.of(context).splash_text,
               textAlign: TextAlign.center,
-              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
+              style: Styles.textStyle16.copyWith(
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                fontFamily: isArabic() ? 'Cairo' : 'Poppins',
+              ),
             ),
           );
         });
   }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == 'ar';
 }

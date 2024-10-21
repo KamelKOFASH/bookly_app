@@ -6,9 +6,10 @@ class CustomCircularIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    return Center(
       child: SpinKitCubeGrid(
-        color: Colors.white,
+        color: isDarkMode ? Colors.white : Colors.black,
         size: 50.0,
       ),
     );

@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   //? List of screens to display for each tab
   final List<Widget> _screens = [
     const HomeViewBody(),
-    FavoriteView(),
+    const FavoriteView(),
     const ProfileView(),
     const SettingsView(),
   ];
@@ -45,29 +45,32 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    return Scaffold(
-      floatingActionButton: const Fab(),
-      //* To Centering FAB
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      //* Display the current screen based on the selected tab
-      body: _screens[_selectedIndex],
-      //* Bottom Navigation Bar
-      bottomNavigationBar: AnimatedBottomNavigationBar(
-        icons: _icons,
-        activeIndex: _selectedIndex,
-        iconSize: 18,
-        gapLocation: GapLocation.center, //? Centering the FAB
-        notchSmoothness:
-            NotchSmoothness.verySmoothEdge, //? Smooth edge around FAB
-        onTap: _onItemTapped,
-        splashColor: Colors.grey,
-        notchMargin: 8.0,
-        backgroundColor: isDarkMode
-            ? Colors.black
-            : Colors.white, //? Navigation bar background color
-        activeColor:
-            isDarkMode ? Colors.white : Colors.black, //? Active icon color
-        inactiveColor: Colors.grey, //? Inactive icon color
+    return PopScope(
+      canPop: false, //? Disable the back button from phone
+      child: Scaffold(
+        floatingActionButton: const Fab(),
+        //* To Centering FAB
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        //* Display the current screen based on the selected tab
+        body: _screens[_selectedIndex],
+        //* Bottom Navigation Bar
+        bottomNavigationBar: AnimatedBottomNavigationBar(
+          icons: _icons,
+          activeIndex: _selectedIndex,
+          iconSize: 18,
+          gapLocation: GapLocation.center, //? Centering the FAB
+          notchSmoothness:
+              NotchSmoothness.verySmoothEdge, //? Smooth edge around FAB
+          onTap: _onItemTapped,
+          splashColor: Colors.grey,
+          notchMargin: 8.0,
+          backgroundColor: isDarkMode
+              ? Colors.black
+              : Colors.white, //? Navigation bar background color
+          activeColor:
+              isDarkMode ? Colors.white : Colors.black, //? Active icon color
+          inactiveColor: Colors.grey, //? Inactive icon color
+        ),
       ),
     );
   }

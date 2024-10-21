@@ -1,3 +1,4 @@
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,7 +8,6 @@ import 'package:settings_ui/settings_ui.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../generated/l10n.dart';
 import '../../view_models/cubits/theme_cubit.dart';
 
 class SettingsViewBody extends StatefulWidget {

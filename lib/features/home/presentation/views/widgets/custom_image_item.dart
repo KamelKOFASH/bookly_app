@@ -17,7 +17,7 @@ class CustomImageItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.bookDetailsView, extra: book);
       },
       child: Card(
-        elevation: 5,
+        elevation: 6,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16.r),
           child: AspectRatio(

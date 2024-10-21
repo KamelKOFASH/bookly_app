@@ -1,4 +1,5 @@
-import '../../../../../generated/l10n.dart';
+import 'package:bookly_app/generated/l10n.dart';
+
 import 'newest_books_list_view.dart';
 import 'custom_app_bar.dart';
 import 'custom_title.dart';

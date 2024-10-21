@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FavoriteView extends StatelessWidget {
-  const FavoriteView({super.key});
+class NotificationsView extends StatelessWidget {
+  const NotificationsView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Favorite'),
+        child: Text('Notifications'),
       ),
     );
   }
