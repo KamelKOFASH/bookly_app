@@ -41,18 +41,16 @@ class _LanguagesViewState extends State<LanguagesView> {
               S.of(context).choose_language,
               style: Styles.textStyle20.copyWith(
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).primaryColorDark,
               ),
             ),
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
-                color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withOpacity(0.05),
                     blurRadius: 6,
                     offset: const Offset(0, 4),
                   ),
@@ -64,7 +62,7 @@ class _LanguagesViewState extends State<LanguagesView> {
                 value: selectedLanguageCode,
                 hint: Text(
                   S.of(context).select_a_language,
-                  style: Styles.textStyle16.copyWith(color: Colors.grey[700]),
+                  style: Styles.textStyle16,
                 ),
                 underline: const SizedBox(),
                 items: languages.map((language) {
@@ -74,9 +72,6 @@ class _LanguagesViewState extends State<LanguagesView> {
                       padding: const EdgeInsets.symmetric(vertical: 12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: selectedLanguageCode == language['code']
-                            ? Theme.of(context).primaryColor.withOpacity(0.1)
-                            : Colors.transparent,
                       ),
                       child: Row(
                         children: [
@@ -89,9 +84,6 @@ class _LanguagesViewState extends State<LanguagesView> {
                             language['name'] ?? '',
                             style: Styles.textStyle16.copyWith(
                               fontWeight: FontWeight.w600,
-                              color: selectedLanguageCode == language['code']
-                                  ? Theme.of(context).primaryColor
-                                  : Colors.black,
                             ),
                           ),
                         ],
