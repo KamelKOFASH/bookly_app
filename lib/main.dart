@@ -1,6 +1,6 @@
-import 'package:intl/intl.dart';
+import 'package:bookly_app/features/settings/presentation/view_models/cubits/theme_cubit.dart';
 
-import 'features/settings/presentation/view_models/cubit/locale_language_cubit.dart';
+import 'features/settings/presentation/view_models/cubits/locale_language_cubit.dart';
 import 'generated/l10n.dart';
 import 'features/search/data/repositories/search_repo_impl.dart';
 import 'features/search/presentation/view_models/search_cubit/search_cubit.dart';
@@ -50,31 +50,45 @@ class BooklyApp extends StatelessWidget {
               ),
             ),
             BlocProvider(
-              create: (context) => LocaleLanguageCubit(), // Provide LocaleCubit
+              create: (context) => LocaleLanguageCubit(),
+            ),
+            BlocProvider(
+              create: (context) => ThemeCubit(), // إضافة ThemeCubit
             ),
           ],
           child: BlocBuilder<LocaleLanguageCubit, Locale>(
-            builder: (context, state) {
-              bool isArabic = state.languageCode == 'ar';
-              return MaterialApp.router(
-                locale: state,
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                supportedLocales: S.delegate.supportedLocales,
-                routerConfig: AppRouter.router,
-                debugShowCheckedModeBanner: false,
-                theme: ThemeData.dark().copyWith(
-                  scaffoldBackgroundColor: kPrimaryColor,
-                  // Change the font based on the locale
-                  textTheme: GoogleFonts.getTextTheme(
-                    isArabic == true ? 'Cairo' : 'Montserrat',
-                    ThemeData.dark().textTheme,
-                  ),
-                ),
+            builder: (context, localeState) {
+              bool isArabic = localeState.languageCode == 'ar';
+              return BlocBuilder<ThemeCubit, ThemeMode>(
+                builder: (context, themeMode) {
+                  return MaterialApp.router(
+                    locale: localeState,
+                    themeMode: themeMode,
+                    theme: ThemeData.light().copyWith(
+                      scaffoldBackgroundColor: Colors.white,
+                      textTheme: GoogleFonts.getTextTheme(
+                        isArabic ? 'Cairo' : 'Montserrat',
+                        ThemeData.light().textTheme,
+                      ),
+                    ),
+                    darkTheme: ThemeData.dark().copyWith(
+                      scaffoldBackgroundColor: kPrimaryColor,
+                      textTheme: GoogleFonts.getTextTheme(
+                        isArabic ? 'Cairo' : 'Montserrat',
+                        ThemeData.dark().textTheme,
+                      ),
+                    ),
+                    localizationsDelegates: const [
+                      S.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: S.delegate.supportedLocales,
+                    routerConfig: AppRouter.router,
+                    debugShowCheckedModeBanner: false,
+                  );
+                },
               );
             },
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -7,12 +8,18 @@ import 'package:settings_ui/settings_ui.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../generated/l10n.dart';
+import '../../view_models/cubits/theme_cubit.dart';
 
-class SettingsViewBody extends StatelessWidget {
+class SettingsViewBody extends StatefulWidget {
   const SettingsViewBody({
     super.key,
   });
 
+  @override
+  State<SettingsViewBody> createState() => _SettingsViewBodyState();
+}
+
+class _SettingsViewBodyState extends State<SettingsViewBody> {
   @override
   Widget build(BuildContext context) {
     return SettingsList(
@@ -30,7 +37,7 @@ class SettingsViewBody extends StatelessWidget {
               leading: const Icon(FontAwesomeIcons.language),
               title: Text(
                 S.of(context).language,
-                style: Styles.textStyle18.copyWith(
+                style: Styles.textStyle16.copyWith(
                   fontWeight: FontWeight.w600,
                   fontFamily: isArabic() ? 'Cairo' : 'Poppins',
                 ),
@@ -42,13 +49,18 @@ class SettingsViewBody extends StatelessWidget {
             SettingsTile.switchTile(
               title: Text(
                 S.of(context).dark_mode,
-                style: Styles.textStyle18.copyWith(
+                style: Styles.textStyle16.copyWith(
+                  fontWeight: FontWeight.w600,
                   fontFamily: isArabic() ? 'Cairo' : 'Poppins',
                 ),
               ),
               leading: const Icon(FontAwesomeIcons.solidMoon),
-              onToggle: (bool value) {},
-              initialValue: true,
+              initialValue: context.read<ThemeCubit>().state == ThemeMode.dark,
+              onToggle: (bool value) {
+                setState(() {
+                  context.read<ThemeCubit>().toggleTheme(value);
+                });
+              },
             ),
           ],
         ),
@@ -65,8 +77,9 @@ class SettingsViewBody extends StatelessWidget {
               leading: const Icon(FontAwesomeIcons.user),
               title: Text(
                 S.of(context).profile,
-                style: Styles.textStyle18.copyWith(
+                style: Styles.textStyle16.copyWith(
                   fontFamily: isArabic() ? 'Cairo' : 'Poppins',
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               onPressed: (context) {
@@ -77,8 +90,9 @@ class SettingsViewBody extends StatelessWidget {
               leading: const Icon(FontAwesomeIcons.arrowRightFromBracket),
               title: Text(
                 S.of(context).log_out,
-                style: Styles.textStyle18.copyWith(
+                style: Styles.textStyle16.copyWith(
                   fontFamily: isArabic() ? 'Cairo' : 'Poppins',
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               onPressed: (context) {},

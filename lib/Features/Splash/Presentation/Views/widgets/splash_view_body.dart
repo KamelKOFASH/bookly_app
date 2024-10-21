@@ -34,12 +34,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(
           AssetsData.logo,
+          color: isDarkMode ? Colors.white : Colors.black,
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.02,

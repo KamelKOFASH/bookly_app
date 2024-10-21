@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   //? List of screens to display for each tab
   final List<Widget> _screens = [
     const HomeViewBody(),
-     FavoriteView(),
+    FavoriteView(),
     const ProfileView(),
     const SettingsView(),
   ];
@@ -44,6 +44,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       floatingActionButton: const Fab(),
       //* To Centering FAB
@@ -61,8 +62,11 @@ class _HomeViewState extends State<HomeView> {
         onTap: _onItemTapped,
         splashColor: Colors.grey,
         notchMargin: 8.0,
-        backgroundColor: Colors.black, //? Navigation bar background color
-        activeColor: Colors.white, //? Active icon color
+        backgroundColor: isDarkMode
+            ? Colors.black
+            : Colors.white, //? Navigation bar background color
+        activeColor:
+            isDarkMode ? Colors.white : Colors.black, //? Active icon color
         inactiveColor: Colors.grey, //? Inactive icon color
       ),
     );

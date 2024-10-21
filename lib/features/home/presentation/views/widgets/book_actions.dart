@@ -14,42 +14,48 @@ class BookActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8.w),
-      child: Row(
-        children: [
-          Expanded(
-            child: CustomButton(
-              text: S.of(context).free,
-              textColor: Colors.black,
-              bgColor: Colors.white,
-              radius: BorderRadius.only(
-                topLeft: !isArabic() ? const Radius.circular(16) : Radius.zero,
-                bottomLeft:
-                    !isArabic() ? const Radius.circular(16) : Radius.zero,
-                topRight: isArabic() ? const Radius.circular(16) : Radius.zero,
-                bottomRight:
-                    isArabic() ? const Radius.circular(16) : Radius.zero,
+      child: Card(
+        elevation: 5,
+        child: Row(
+          children: [
+            Expanded(
+              child: CustomButton(
+                text: S.of(context).free,
+                textColor: Colors.black,
+                bgColor: Colors.white,
+                radius: BorderRadius.only(
+                  topLeft:
+                      !isArabic() ? const Radius.circular(16) : Radius.zero,
+                  bottomLeft:
+                      !isArabic() ? const Radius.circular(16) : Radius.zero,
+                  topRight:
+                      isArabic() ? const Radius.circular(16) : Radius.zero,
+                  bottomRight:
+                      isArabic() ? const Radius.circular(16) : Radius.zero,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: CustomButton(
-              onPressed: () {
-                launchCustomUrl(context, book.volumeInfo?.previewLink ?? '');
-              },
-              text: getText(book, context: context),
-              textColor: Colors.white,
-              bgColor: const Color(0xffEF8262),
-              radius: BorderRadius.only(
-                topRight: !isArabic() ? const Radius.circular(16) : Radius.zero,
-                bottomRight:
-                    !isArabic() ? const Radius.circular(16) : Radius.zero,
-                topLeft: isArabic() ? const Radius.circular(16) : Radius.zero,
-                bottomLeft:
-                    isArabic() ? const Radius.circular(16) : Radius.zero,
+            Expanded(
+              child: CustomButton(
+                onPressed: () {
+                  launchCustomUrl(context, book.volumeInfo?.previewLink ?? '');
+                },
+                text: getText(book, context: context),
+                textColor: Colors.white,
+                bgColor: const Color(0xffEF8262),
+                radius: BorderRadius.only(
+                  topRight:
+                      !isArabic() ? const Radius.circular(16) : Radius.zero,
+                  bottomRight:
+                      !isArabic() ? const Radius.circular(16) : Radius.zero,
+                  topLeft: isArabic() ? const Radius.circular(16) : Radius.zero,
+                  bottomLeft:
+                      isArabic() ? const Radius.circular(16) : Radius.zero,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

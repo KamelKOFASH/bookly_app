@@ -16,14 +16,17 @@ class CustomImageItem extends StatelessWidget {
       onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetailsView, extra: book);
       },
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16.r),
-        child: AspectRatio(
-          aspectRatio: 2.7 / 4,
-          child: CachedNetworkImage(
-            fit: BoxFit.fill,
-            imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+      child: Card(
+        elevation: 5,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16.r),
+          child: AspectRatio(
+            aspectRatio: 2.7 / 4,
+            child: CachedNetworkImage(
+              fit: BoxFit.fill,
+              imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
           ),
         ),
       ),

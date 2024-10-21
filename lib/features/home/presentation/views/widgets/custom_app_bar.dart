@@ -11,12 +11,14 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkenMode = Theme.of(context).brightness == Brightness.dark;
     return SafeArea(
       child: Row(
         children: [
           Image.asset(
             AssetsData.logo,
             height: 18.h,
+            color: isDarkenMode ? Colors.white : Colors.black,
           ),
           const Spacer(),
           IconButton(

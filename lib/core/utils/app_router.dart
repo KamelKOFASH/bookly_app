@@ -1,15 +1,14 @@
-import '../../features/profile/presentation/views/profile_view.dart';
-import '../../features/settings/presentation/views/languages_view.dart';
-
-import '../../features/settings/presentation/views/settings_view.dart';
-import 'service_locator.dart';
-import '../models/book_model/book_model.dart';
-import '../../features/home/data/repositories/home_repo_impl.dart';
-import '../../features/home/presentation/view_models/similar_books_cubit/similar_books_cubit.dart';
-import '../../features/home/presentation/views/book_details_view.dart';
-import '../../features/home/presentation/views/home_view.dart';
-import '../../features/search/presentation/views/search_view.dart';
-import '../../features/splash/presentation/views/splash_view.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
+import 'package:bookly_app/core/utils/service_locator.dart';
+import 'package:bookly_app/features/home/data/repositories/home_repo_impl.dart';
+import 'package:bookly_app/features/home/presentation/view_models/similar_books_cubit/similar_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
+import 'package:bookly_app/features/home/presentation/views/home_view.dart';
+import 'package:bookly_app/features/profile/presentation/views/profile_view.dart';
+import 'package:bookly_app/features/search/presentation/views/search_view.dart';
+import 'package:bookly_app/features/settings/presentation/views/languages_view.dart';
+import 'package:bookly_app/features/settings/presentation/views/settings_view.dart';
+import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
