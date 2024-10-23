@@ -259,6 +259,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification`
+  String get notifications {
+    return Intl.message(
+      'Notification',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookmarks`
+  String get book_marks {
+    return Intl.message(
+      'Bookmarks',
+      name: 'book_marks',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

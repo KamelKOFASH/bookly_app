@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "English": MessageLookupByLibrary.simpleMessage("English"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "book_marks": MessageLookupByLibrary.simpleMessage("Bookmarks"),
         "choose_language":
             MessageLookupByLibrary.simpleMessage("Choose your Language"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
@@ -36,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_books_found":
             MessageLookupByLibrary.simpleMessage("No books found"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notification"),
         "preview": MessageLookupByLibrary.simpleMessage("Preview"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "search": MessageLookupByLibrary.simpleMessage("Search a book"),

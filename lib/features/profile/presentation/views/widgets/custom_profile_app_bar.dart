@@ -1,24 +1,20 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/styles.dart';
-
-class SettingsAppBarWidget extends StatelessWidget
+class CustomProfileAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
-  const SettingsAppBarWidget({
-    super.key,
-    required this.title,
-    this.isSettingsView = false,
-  });
+  const CustomProfileAppBarWidget(
+      {super.key, required this.isProfileView, required this.title});
+  final bool isProfileView;
   final String title;
-  final bool isSettingsView;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      leading: isSettingsView
+      leading: isProfileView
           ? null
           : IconButton(
               onPressed: () {
@@ -39,5 +35,5 @@ class SettingsAppBarWidget extends StatelessWidget
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

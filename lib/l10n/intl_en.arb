@@ -19,6 +19,8 @@
     "Arabic": "Arabic",
     "select_language": "Select Language",
     "choose_language": "Choose your Language",
-    "select_a_language": "Select a language"
+    "select_a_language": "Select a language",
+    "notifications": "Notification",
+    "book_marks": "Bookmarks"
 
 }

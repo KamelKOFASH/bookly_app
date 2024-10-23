@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "English": MessageLookupByLibrary.simpleMessage("الانجليزية"),
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+        "book_marks": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "choose_language": MessageLookupByLibrary.simpleMessage("اختر لغتك"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع المظلم"),
         "free": MessageLookupByLibrary.simpleMessage("مجاني"),
@@ -35,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_books_found":
             MessageLookupByLibrary.simpleMessage("لا توجد كتب متاحة"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("غير متوفر"),
+        "notifications": MessageLookupByLibrary.simpleMessage("الاشعارات"),
         "preview": MessageLookupByLibrary.simpleMessage("عرض"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "search": MessageLookupByLibrary.simpleMessage("ابحث عن كتاب"),

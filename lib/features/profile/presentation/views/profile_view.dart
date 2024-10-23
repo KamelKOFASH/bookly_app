@@ -1,3 +1,5 @@
+import 'package:bookly_app/features/profile/presentation/views/widgets/custom_profile_app_bar.dart';
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -5,9 +7,13 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+        appBar: CustomProfileAppBarWidget(
+          title: S.of(context).profile,
+          isProfileView: true,
+        ),
         body: Center(
-      child: Text('Profile'),
-    ));
+          child: Text(S.of(context).profile),
+        ));
   }
 }
