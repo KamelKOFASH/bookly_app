@@ -25,18 +25,41 @@ class MessageLookup extends MessageLookupByLibrary {
         "Arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "English": MessageLookupByLibrary.simpleMessage("الانجليزية"),
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+        "already_have_account":
+            MessageLookupByLibrary.simpleMessage("لديك حساب؟ سجل"),
         "book_marks": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "choose_language": MessageLookupByLibrary.simpleMessage("اختر لغتك"),
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع المظلم"),
+        "dont_have_account":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ سجل"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
         "free": MessageLookupByLibrary.simpleMessage("مجاني"),
         "general": MessageLookupByLibrary.simpleMessage("عام"),
+        "google": MessageLookupByLibrary.simpleMessage("جوجل"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "log_out": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "newest_books": MessageLookupByLibrary.simpleMessage("أحدث الكتب"),
         "no_books_found":
             MessageLookupByLibrary.simpleMessage("لا توجد كتب متاحة"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("غير متوفر"),
         "notifications": MessageLookupByLibrary.simpleMessage("الاشعارات"),
+        "or_login_with":
+            MessageLookupByLibrary.simpleMessage("او تسجيل الدخول مع"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "password_not_match":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور غير متطابقة"),
+        "please_enter_strong_password":
+            MessageLookupByLibrary.simpleMessage("الرجاء ادخال كلمة مرور قوية"),
+        "please_enter_valid_email": MessageLookupByLibrary.simpleMessage(
+            "الرجاء ادخال بريد الكتروني صالح"),
+        "plz_enter_email": MessageLookupByLibrary.simpleMessage(
+            "الرجاء ادخال البريد الالكتروني"),
+        "plz_enter_password":
+            MessageLookupByLibrary.simpleMessage("الرجاء ادخال كلمة المرور"),
         "preview": MessageLookupByLibrary.simpleMessage("عرض"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "search": MessageLookupByLibrary.simpleMessage("ابحث عن كتاب"),
@@ -44,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "select_a_language": MessageLookupByLibrary.simpleMessage("اختر لغة"),
         "select_language": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "similar_books": MessageLookupByLibrary.simpleMessage("كتب مشابهة"),
         "splash_text":
             MessageLookupByLibrary.simpleMessage("تصفح جميع الكتب في العالم")

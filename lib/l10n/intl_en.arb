@@ -21,6 +21,21 @@
     "choose_language": "Choose your Language",
     "select_a_language": "Select a language",
     "notifications": "Notification",
-    "book_marks": "Bookmarks"
+    "book_marks": "Bookmarks",
+    "plz_enter_email": "Please enter your email",
+    "plz_enter_password": "Please enter your password",
+    "dont_have_account": "Don\"t have an account? Sign-Up",
+    "login": "Log-In",
+    "sign_up": "Sign-Up",
+    "or_login_with": "Or login with",
+    "google": "Google",
+    "facebook": "Facebook",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "password_not_match": "Passwords do not match",
+    "already_have_account": "Already have an account?",
+    "please_enter_valid_email": "Please enter a valid email",
+    "please_enter_strong_password": "Please enter a strong password"
 
 }

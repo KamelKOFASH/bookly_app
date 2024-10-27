@@ -1,9 +1,11 @@
 import 'package:bookly_app/core/widgets/custom_circular_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_router.dart';
+import '../../../../../generated/l10n.dart';
 import '../../view_models/cubit/auth_cubit.dart';
 import '../../view_models/cubit/auth_state.dart';
 import 'custom_text_form_field.dart';
@@ -34,7 +36,7 @@ class FormBody extends StatelessWidget {
             textfieldName: textfield1,
             validator: (value) {
               return value == null || value.isEmpty
-                  ? 'Please enter email'
+                  ? S.of(context).plz_enter_email
                   : null;
             },
             controller: emailController,
@@ -44,7 +46,7 @@ class FormBody extends StatelessWidget {
             textfieldName: textfield2,
             validator: (value) {
               return value == null || value.isEmpty
-                  ? 'Please enter password'
+                  ? S.of(context).plz_enter_password
                   : null;
             },
             controller: passwordController,
@@ -53,7 +55,7 @@ class FormBody extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: CustomTextButton(
-              textfieldName: 'don\'t have an account? Sign-Up',
+              textfieldName: S.of(context).dont_have_account,
               onPressed: () {
                 GoRouter.of(context).push(AppRouter.registerView);
               },
@@ -71,14 +73,17 @@ class FormBody extends StatelessWidget {
             },
             builder: (context, state) {
               if (state is AuthLoading) {
-                return const CustomCircularIndicator();
+                return CustomCircularIndicator(
+                  size: 20.sp,
+                );
               }
               return CustomElevatedButton(
-                text: 'Login',
+                text: S.of(context).login,
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
-                    context.read<AuthCubit>().signIn(
-                        emailController.text, passwordController.text);
+                    context
+                        .read<AuthCubit>()
+                        .signIn(emailController.text, passwordController.text);
                   }
                 },
               );

@@ -1,7 +1,4 @@
 import 'package:bookly_app/features/Authentication/presentation/view_models/cubit/auth_cubit.dart';
-import 'package:bookly_app/features/Authentication/presentation/view_models/cubit/auth_state.dart';
-import 'package:bookly_app/features/Authentication/presentation/views/login_view.dart';
-import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/generated/l10n.dart';
 import 'package:bookly_app/features/settings/presentation/view_models/cubits/theme_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -98,19 +95,4 @@ class BooklyApp extends StatelessWidget {
   }
 }
 
-class AuthChecker extends StatelessWidget {
-  const AuthChecker({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<AuthCubit, AuthState>(
-      builder: (context, state) {
-        if (state is AuthAuthenticated) {
-          return const HomeView();
-        } else {
-          return const LoginView();
-        }
-      },
-    );
-  }
-}

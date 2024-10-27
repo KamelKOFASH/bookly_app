@@ -25,7 +25,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     initSlidingAnimation();
 
-    // التأكد من حالة تسجيل الدخول والتنقل بناءً عليها
     checkAuthAndNavigate();
   }
 
@@ -72,7 +71,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void checkAuthAndNavigate() {
     // استخدام Future.delayed لانتظار انتهاء الأنميشن
     Future.delayed(
-      const Duration(seconds: 4),
+      const Duration(seconds: 5),
       () {
         if (mounted) {
           final authCubit = context.read<AuthCubit>();

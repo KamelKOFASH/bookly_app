@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class SocialButtonsRow extends StatelessWidget {
   final void Function() onGooglePressed;
   final void Function() onFacebookPressed;
@@ -23,7 +25,7 @@ class SocialButtonsRow extends StatelessWidget {
                 child: const Divider(color: Colors.black, thickness: 1),
               ),
             ),
-            const Text('Or login with'),
+             Text(S.of(context).or_login_with),
             Expanded(
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -40,8 +42,8 @@ class SocialButtonsRow extends StatelessWidget {
               onPressed: () {
                 onGooglePressed;
               },
-              icon: const Icon(Icons.email),
-              label: const Text('Google'),
+              icon: const Icon(Icons.email, color: Colors.white),
+              label: Text(S.of(context).google),
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.red,
@@ -52,8 +54,8 @@ class SocialButtonsRow extends StatelessWidget {
               onPressed: () {
                 onFacebookPressed;
               },
-              icon: const Icon(Icons.facebook),
-              label: const Text('Facebook'),
+              icon: const Icon(Icons.facebook, color: Colors.white),
+              label:  Text(S.of(context).facebook),
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blue,

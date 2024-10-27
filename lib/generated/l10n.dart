@@ -279,6 +279,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter your email`
+  String get plz_enter_email {
+    return Intl.message(
+      'Please enter your email',
+      name: 'plz_enter_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get plz_enter_password {
+    return Intl.message(
+      'Please enter your password',
+      name: 'plz_enter_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don"t have an account? Sign-Up`
+  String get dont_have_account {
+    return Intl.message(
+      'Don"t have an account? Sign-Up',
+      name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log-In`
+  String get login {
+    return Intl.message(
+      'Log-In',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign-Up`
+  String get sign_up {
+    return Intl.message(
+      'Sign-Up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or login with`
+  String get or_login_with {
+    return Intl.message(
+      'Or login with',
+      name: 'or_login_with',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google`
+  String get google {
+    return Intl.message(
+      'Google',
+      name: 'google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook`
+  String get facebook {
+    return Intl.message(
+      'Facebook',
+      name: 'facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get password_not_match {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'password_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get already_have_account {
+    return Intl.message(
+      'Already have an account?',
+      name: 'already_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email`
+  String get please_enter_valid_email {
+    return Intl.message(
+      'Please enter a valid email',
+      name: 'please_enter_valid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a strong password`
+  String get please_enter_strong_password {
+    return Intl.message(
+      'Please enter a strong password',
+      name: 'please_enter_strong_password',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -21,6 +21,22 @@
     "choose_language": "اختر لغتك",
     "select_a_language": "اختر لغة",
     "notifications": "الاشعارات",
-    "book_marks": "المفضلة"
+    "book_marks": "المفضلة",
+    "plz_enter_email": "الرجاء ادخال البريد الالكتروني",
+    "plz_enter_password": "الرجاء ادخال كلمة المرور",
+    "dont_have_account": "ليس لديك حساب؟ سجل",
+    "login": "تسجيل الدخول",
+    "sign_up": "تسجيل",
+    "or_login_with": "او تسجيل الدخول مع",
+    "google": "جوجل",
+    "facebook": "فيسبوك",
+    "email": "البريد الالكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "password_not_match": "كلمة المرور غير متطابقة",
+    "already_have_account": "لديك حساب؟ سجل",
+    "please_enter_valid_email": "الرجاء ادخال بريد الكتروني صالح",
+    "please_enter_strong_password": "الرجاء ادخال كلمة مرور قوية"
+
 
 }
