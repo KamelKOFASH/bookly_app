@@ -74,16 +74,16 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
           ),
           tiles: [
             SettingsTile.navigation(
-              leading: const Icon(FontAwesomeIcons.user),
+              leading: const Icon(FontAwesomeIcons.solidBell),
               title: Text(
-                S.of(context).profile,
+                S.of(context).notifications,
                 style: Styles.textStyle16.copyWith(
                   fontFamily: isArabic() ? 'Cairo' : 'Poppins',
                   fontWeight: FontWeight.w600,
                 ),
               ),
               onPressed: (context) {
-                GoRouter.of(context).push(AppRouter.profileView);
+                GoRouter.of(context).push(AppRouter.notificationsView);
               },
             ),
             SettingsTile.navigation(

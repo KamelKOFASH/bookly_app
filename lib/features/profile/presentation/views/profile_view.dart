@@ -2,6 +2,8 @@ import 'package:bookly_app/features/profile/presentation/views/widgets/custom_pr
 import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/styles.dart';
+
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
@@ -13,7 +15,10 @@ class ProfileView extends StatelessWidget {
           isProfileView: true,
         ),
         body: Center(
-          child: Text(S.of(context).profile),
+          child: Text(
+            S.of(context).profile,
+            style: Styles.textStyle18,
+          ),
         ));
   }
 }

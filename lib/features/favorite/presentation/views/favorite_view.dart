@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/favorite/presentation/views/widgets/custom_fav_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,10 @@ class FavoriteView extends StatelessWidget {
         title: S.of(context).book_marks,
       ),
       body: Center(
-        child: Text(S.of(context).book_marks),
+        child: Text(
+          S.of(context).book_marks,
+          style: Styles.textStyle18,
+        ),
       ),
     );
   }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "15714464763",
+    "project_id": "bookly-cf7fa",
+    "storage_bucket": "bookly-cf7fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15714464763:android:5657dd9849767aae70115e",
+        "android_client_info": {
+          "package_name": "com.example.bookly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW9Llgk8fKxnLS8EjuJ6yg0P6wOX61JII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15714464763:android:bbabaaec13de66f070115e",
+        "android_client_info": {
+          "package_name": "com.example.bookly_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW9Llgk8fKxnLS8EjuJ6yg0P6wOX61JII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

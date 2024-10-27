@@ -14,6 +14,9 @@ import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/Authentication/presentation/views/login_view.dart';
+import '../../features/Authentication/presentation/views/register_view.dart';
+
 abstract class AppRouter {
   static const String splashView = '/';
   static const String homeView = '/home';
@@ -24,12 +27,21 @@ abstract class AppRouter {
   static const String profileView = '/profile';
   static const String favoriteView = '/favorite';
   static const String notificationsView = '/notifications';
-
+  static const String registerView = '/register';
+  static const String loginView = '/login';
   static final router = GoRouter(
     routes: [
       GoRoute(
         path: splashView,
         builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: registerView,
+        builder: (context, state) =>  const RegisterView(),
+      ),
+      GoRoute(
+        path: loginView,
+        builder: (context, state) => const LoginView(),
       ),
       GoRoute(
         path: homeView,
