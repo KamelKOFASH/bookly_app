@@ -400,10 +400,10 @@ class S {
     );
   }
 
-  /// `Already have an account?`
+  /// `Already have an account? Log-In`
   String get already_have_account {
     return Intl.message(
-      'Already have an account?',
+      'Already have an account? Log-In',
       name: 'already_have_account',
       desc: '',
       args: [],

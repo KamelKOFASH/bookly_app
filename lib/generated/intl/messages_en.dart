@@ -25,8 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "English": MessageLookupByLibrary.simpleMessage("English"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
-        "already_have_account":
-            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "already_have_account": MessageLookupByLibrary.simpleMessage(
+            "Already have an account? Log-In"),
         "book_marks": MessageLookupByLibrary.simpleMessage("Bookmarks"),
         "choose_language":
             MessageLookupByLibrary.simpleMessage("Choose your Language"),

@@ -77,10 +77,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
           final authCubit = context.read<AuthCubit>();
 
           if (authCubit.isUserAuthenticated()) {
-            // المستخدم مسجل الدخول، الانتقال إلى homeView
+            //? المستخدم مسجل الدخول، الانتقال إلى homeView
             GoRouter.of(context).pushReplacement(AppRouter.homeView);
           } else {
-            // المستخدم غير مسجل، الانتقال إلى loginView
+            //? المستخدم غير مسجل، الانتقال إلى loginView
             GoRouter.of(context).pushReplacement(AppRouter.loginView);
           }
         }
