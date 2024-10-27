@@ -8,6 +8,7 @@ import 'package:settings_ui/settings_ui.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../Authentication/presentation/view_models/cubit/auth_cubit.dart';
 import '../../view_models/cubits/theme_cubit.dart';
 
 class SettingsViewBody extends StatefulWidget {
@@ -95,7 +96,10 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              onPressed: (context) {},
+              onPressed: (context) {
+                context.read<AuthCubit>().signOut();
+                GoRouter.of(context).push(AppRouter.loginView);
+              },
             ),
           ],
         ),

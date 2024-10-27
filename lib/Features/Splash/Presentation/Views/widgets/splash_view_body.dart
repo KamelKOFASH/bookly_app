@@ -1,9 +1,11 @@
-import '../../../../../core/utils/app_router.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../Core/utils/assets.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../features/Authentication/presentation/view_models/cubit/auth_cubit.dart';
 import 'sliding_animated_text.dart';
-import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -23,7 +25,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     initSlidingAnimation();
 
-    navigateToAuth();
+    // التأكد من حالة تسجيل الدخول والتنقل بناءً عليها
+    checkAuthAndNavigate();
   }
 
   @override
@@ -66,12 +69,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _animationController.forward();
   }
 
-  void navigateToAuth() {
+  void checkAuthAndNavigate() {
+    // استخدام Future.delayed لانتظار انتهاء الأنميشن
     Future.delayed(
       const Duration(seconds: 4),
       () {
         if (mounted) {
-          GoRouter.of(context).push(AppRouter.loginView);
+          final authCubit = context.read<AuthCubit>();
+
+          if (authCubit.isUserAuthenticated()) {
+            // المستخدم مسجل الدخول، الانتقال إلى homeView
+            GoRouter.of(context).pushReplacement(AppRouter.homeView);
+          } else {
+            // المستخدم غير مسجل، الانتقال إلى loginView
+            GoRouter.of(context).pushReplacement(AppRouter.loginView);
+          }
         }
       },
     );
