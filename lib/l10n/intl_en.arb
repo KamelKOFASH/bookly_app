@@ -36,6 +36,12 @@
     "password_not_match": "Passwords do not match",
     "already_have_account": "Already have an account? Log-In",
     "please_enter_valid_email": "Please enter a valid email",
-    "please_enter_strong_password": "Please enter a strong password"
+    "please_enter_strong_password": "Please enter a strong password",
+    "confirm_logout": "Confirm Logout",
+    "are_you_sure_logout": "Are you sure you want to log out?",
+    "cancel":"Cancel",
+    "retry":"Try Again",
+    "check_your_internet": "Check your internet connection!"
+
 
 }

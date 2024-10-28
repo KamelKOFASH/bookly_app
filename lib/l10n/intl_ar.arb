@@ -36,7 +36,13 @@
     "password_not_match": "كلمة المرور غير متطابقة",
     "already_have_account": "لديك حساب؟ سجل",
     "please_enter_valid_email": "الرجاء ادخال بريد الكتروني صالح",
-    "please_enter_strong_password": "الرجاء ادخال كلمة مرور قوية"
+    "please_enter_strong_password": "الرجاء ادخال كلمة مرور قوية",
+    "confirm_logout": "تأكيد تسجيل الخروج",
+    "are_you_sure_logout": "هل أنت متأكد من أنك تريد تسجيل الخروج؟",
+    "cancel":"الغاء",
+    "retry":"اعادة المحاولة",
+    "check_your_internet": "التحقق من اتصالك بالانترنت"
+
 
 
 }

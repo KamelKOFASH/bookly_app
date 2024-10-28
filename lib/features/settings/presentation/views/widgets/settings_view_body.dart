@@ -1,13 +1,13 @@
+import 'package:bookly_app/features/settings/presentation/views/widgets/log_out_dialpg.dart';
 import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 import 'package:settings_ui/settings_ui.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../Authentication/presentation/view_models/cubit/auth_cubit.dart';
+import '../../../../splash/presentation/views/widgets/sliding_animated_text.dart';
 import '../../view_models/cubits/theme_cubit.dart';
 
 class SettingsViewBody extends StatefulWidget {
@@ -96,8 +96,12 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
                 ),
               ),
               onPressed: (context) {
-                context.read<AuthCubit>().signOut();
-                GoRouter.of(context).push(AppRouter.loginView);
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const LogOutDialog();
+                  },
+                );
               },
             ),
           ],
@@ -105,8 +109,4 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
       ],
     );
   }
-}
-
-bool isArabic() {
-  return Intl.getCurrentLocale() == 'ar';
 }

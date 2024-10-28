@@ -27,9 +27,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "already_have_account": MessageLookupByLibrary.simpleMessage(
             "Already have an account? Log-In"),
+        "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to log out?"),
         "book_marks": MessageLookupByLibrary.simpleMessage("Bookmarks"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "check_your_internet": MessageLookupByLibrary.simpleMessage(
+            "Check your internet connection!"),
         "choose_language":
             MessageLookupByLibrary.simpleMessage("Choose your Language"),
+        "confirm_logout":
+            MessageLookupByLibrary.simpleMessage("Confirm Logout"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
@@ -62,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter your password"),
         "preview": MessageLookupByLibrary.simpleMessage("Preview"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "retry": MessageLookupByLibrary.simpleMessage("Try Again"),
         "search": MessageLookupByLibrary.simpleMessage("Search a book"),
         "search_result": MessageLookupByLibrary.simpleMessage("Search Result"),
         "select_a_language":

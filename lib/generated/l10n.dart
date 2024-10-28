@@ -429,6 +429,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Confirm Logout`
+  String get confirm_logout {
+    return Intl.message(
+      'Confirm Logout',
+      name: 'confirm_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get are_you_sure_logout {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'are_you_sure_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get retry {
+    return Intl.message(
+      'Try Again',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your internet connection!`
+  String get check_your_internet {
+    return Intl.message(
+      'Check your internet connection!',
+      name: 'check_your_internet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

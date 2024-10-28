@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:intl/intl.dart';
 
 import '../../generated/l10n.dart';
 
@@ -15,6 +15,10 @@ class Utils {
     'assets/images/avatar7.jpg',
     'assets/images/avatar8.jpg',
   ];
+  bool isArabic() {
+    return Intl.getCurrentLocale() == 'ar';
+  }
+
   static void showLoadingDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -34,7 +38,7 @@ class Utils {
 //Validators
 //....
 // Validator for Email
-  static String? validateEmail(String? value ,{required BuildContext context}) {
+  static String? validateEmail(String? value, {required BuildContext context}) {
     if (value == null || value.isEmpty) {
       return S.of(context).plz_enter_email;
     }
@@ -45,7 +49,8 @@ class Utils {
   }
 
 // Validator for Password
-  static String? validatePassword(String? value , {required BuildContext context}) {
+  static String? validatePassword(String? value,
+      {required BuildContext context}) {
     if (value == null || value.isEmpty) {
       return S.of(context).plz_enter_password;
     }

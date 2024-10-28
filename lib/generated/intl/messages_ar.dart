@@ -27,8 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "already_have_account":
             MessageLookupByLibrary.simpleMessage("لديك حساب؟ سجل"),
+        "are_you_sure_logout": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من أنك تريد تسجيل الخروج؟"),
         "book_marks": MessageLookupByLibrary.simpleMessage("المفضلة"),
+        "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
+        "check_your_internet":
+            MessageLookupByLibrary.simpleMessage("التحقق من اتصالك بالانترنت"),
         "choose_language": MessageLookupByLibrary.simpleMessage("اختر لغتك"),
+        "confirm_logout":
+            MessageLookupByLibrary.simpleMessage("تأكيد تسجيل الخروج"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع المظلم"),
@@ -62,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء ادخال كلمة المرور"),
         "preview": MessageLookupByLibrary.simpleMessage("عرض"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "retry": MessageLookupByLibrary.simpleMessage("اعادة المحاولة"),
         "search": MessageLookupByLibrary.simpleMessage("ابحث عن كتاب"),
         "search_result": MessageLookupByLibrary.simpleMessage("نتيجة البحث"),
         "select_a_language": MessageLookupByLibrary.simpleMessage("اختر لغة"),
