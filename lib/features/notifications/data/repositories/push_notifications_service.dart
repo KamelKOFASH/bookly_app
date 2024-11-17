@@ -5,13 +5,15 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 class PushNotificationsService {
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
-  static String? token;
+  // static String? token;
 
   static Future init() async {
     await messaging.requestPermission();
-    token = await messaging.getToken();
-    log(token ?? 'No token');
-
+    await messaging.getToken().then((token) {
+      sendTokenToServer(token!);
+    });
+    messaging.onTokenRefresh.listen((newToken) => sendTokenToServer(newToken));
+    // log(token ?? 'No token');
     //? تمكين تشغيل الرسالة في الخلفية وايضا في حالة غلق التطبيق
     //? BackgroundMessage or Killed
     FirebaseMessaging.onBackgroundMessage(handleBackgroundMessage);
@@ -24,11 +26,19 @@ class PushNotificationsService {
         message,
       );
     });
+    messaging.subscribeToTopic('all').then((value) {
+      log("subscribed to all");
+    });
   }
 
   static Future<void> handleBackgroundMessage(RemoteMessage message) async {
     await Firebase.initializeApp();
     log(message.data.toString());
+  }
+
+  static void sendTokenToServer(String token) {
+    //? Option1 => Api
+    //? Option2 => Firebase
   }
 }
 

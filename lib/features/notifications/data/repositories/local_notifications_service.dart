@@ -48,8 +48,9 @@ class LocalNotificationService {
       priority: Priority.high,
       styleInformation: bigPictureStyleInformation,
       playSound: true,
-      // sound: RawResourceAndroidNotificationSound(
-      //     'long_notification_sound'.split('.').first),
+      sound: RawResourceAndroidNotificationSound(
+        'books_notification_sound'.split('.').first,
+      ),
     );
     NotificationDetails details = NotificationDetails(
       android: android,

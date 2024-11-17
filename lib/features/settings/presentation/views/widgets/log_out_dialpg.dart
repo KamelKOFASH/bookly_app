@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../../constants.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../Authentication/presentation/view_models/cubit/auth_cubit.dart';
@@ -26,7 +24,6 @@ class LogOutDialog extends StatelessWidget {
       ),
       icon: const Icon(FontAwesomeIcons.circleExclamation),
       iconColor: Colors.red,
-      backgroundColor: kPrimaryColor,
       actions: [
         TextButton(
           child: Text(S.of(context).cancel),

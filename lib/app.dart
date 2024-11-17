@@ -1,4 +1,5 @@
 import 'package:bookly_app/features/Authentication/presentation/view_models/cubit/auth_cubit.dart';
+import 'package:bookly_app/features/notifications/presentation/view_models/cubit/notifications_cubit.dart';
 import 'package:bookly_app/generated/l10n.dart';
 import 'package:bookly_app/features/settings/presentation/view_models/cubits/theme_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -46,7 +47,11 @@ class BooklyApp extends StatelessWidget {
           create: (context) => ThemeCubit(),
         ),
         BlocProvider(
-         create: (context) => AuthCubit(FirebaseAuth.instance)..checkAuthStatus(),
+          create: (context) =>
+              AuthCubit(FirebaseAuth.instance)..checkAuthStatus(),
+        ),
+        BlocProvider(
+          create: (context) => NotificationsCubit(),
         ),
       ],
       child: BlocBuilder<LocaleLanguageCubit, Locale>(
@@ -94,5 +99,3 @@ class BooklyApp extends StatelessWidget {
     );
   }
 }
-
-

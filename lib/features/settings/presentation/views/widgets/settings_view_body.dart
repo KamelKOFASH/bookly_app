@@ -24,6 +24,7 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
   Widget build(BuildContext context) {
     return SettingsList(
       sections: [
+        //? General Section
         SettingsSection(
           title: Text(
             S.of(context).general,
@@ -33,6 +34,7 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
             ),
           ),
           tiles: [
+            //* Language
             SettingsTile.navigation(
               leading: const Icon(FontAwesomeIcons.language),
               title: Text(
@@ -46,6 +48,7 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
                 GoRouter.of(context).push(AppRouter.languageView);
               },
             ),
+            //* Dark Mode
             SettingsTile.switchTile(
               title: Text(
                 S.of(context).dark_mode,
@@ -64,6 +67,8 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
             ),
           ],
         ),
+
+        //? Account Section
         SettingsSection(
           title: Text(
             S.of(context).account,
@@ -73,6 +78,7 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
             ),
           ),
           tiles: [
+            //* Notifications
             SettingsTile.navigation(
               leading: const Icon(FontAwesomeIcons.solidBell),
               title: Text(
@@ -86,6 +92,7 @@ class _SettingsViewBodyState extends State<SettingsViewBody> {
                 GoRouter.of(context).push(AppRouter.notificationsView);
               },
             ),
+            //* Log Out
             SettingsTile.navigation(
               leading: const Icon(FontAwesomeIcons.arrowRightFromBracket),
               title: Text(
